@@ -1,13 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
-  selector: 'app-user',
-  standalone: true,
-  imports: [
-    CommonModule,
-  ],
-  templateUrl: './user.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: "app-user",
+	standalone: true,
+	imports: [CommonModule],
+	templateUrl: "./user.component.html",
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserComponent { }
+export class UserComponent {}

@@ -1,13 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
-  selector: 'app-defer-views',
-  standalone: true,
-  imports: [
-    CommonModule,
-  ],
-  templateUrl: './defer-views.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: "app-defer-views",
+	standalone: true,
+	imports: [CommonModule],
+	templateUrl: "./defer-views.component.html",
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DeferViewsComponent { }
+export class DeferViewsComponent {}
