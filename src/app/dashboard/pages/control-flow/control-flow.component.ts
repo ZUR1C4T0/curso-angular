@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
 
 @Component({
 	selector: "app-control-flow",
@@ -8,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 	templateUrl: "./control-flow.component.html",
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ControlFlowComponent {}
+export class ControlFlowComponent {
+	public showContent = signal(false);
+
+	public toggleContent() {
+		this.showContent.update((value) => !value);
+	}
+}
