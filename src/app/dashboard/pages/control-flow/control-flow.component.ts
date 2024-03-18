@@ -1,10 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { TitleComponent } from "~/app/shared/title/title.component";
 
 @Component({
 	selector: "app-control-flow",
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, TitleComponent],
 	templateUrl: "./control-flow.component.html",
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
