@@ -1,4 +1,4 @@
-<section class="grid grid-cols-1 gap-3 place-content-center md:grid-cols-2">
+<section class="grid grid-cols-1 gap-5 place-content-center md:grid-cols-2">
   <!-- ngIf -->
   <div
     class="block w-full max-w-sm p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -28,5 +28,61 @@
     </div>
 
     }
+  </div>
+
+  <!-- ngSwitch -->
+  <div
+    class="block w-full max-w-sm p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      switch: {{ grade() }}
+    </h2>
+    <ul class="flex gap-2">
+      <li *ngFor="let g of grades" class="text-sm text-gray-600 dark:text-gray-400">
+        <label>
+          <input type="radio" name="fruit" [value]="g" [checked]="g === grade()" (change)="changeGrade(g)" />
+          {{ g }}
+        </label>
+      </li>
+    </ul>
+    <div [ngSwitch]="grade()" class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+      <span class="text-indigo-600">
+        <ng-template [ngSwitchCase]="'A'">Exelent!</ng-template>
+        <ng-template [ngSwitchCase]="'B'">Good!</ng-template>
+        <ng-template [ngSwitchCase]="'C'">Enough</ng-template>
+        <ng-template [ngSwitchCase]="'D'">Insufficient</ng-template>
+        <ng-template [ngSwitchCase]="'E'">Reprobate</ng-template>
+        <ng-template ngSwitchDefault class="text-red-500">Select a valid option</ng-template>
+      </span>
+    </div>
+  </div>
+
+  <!-- @switch -->
+  <div
+    class="block w-full max-w-sm p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      switch: {{ grade() }}
+    </h2>
+    <ul class="flex gap-2">
+      @for (g of grades; track g) {
+      <li class="text-sm text-gray-600 dark:text-gray-400">
+        <label>
+          <input type="radio" name="fruit2" [value]="g" [checked]="g === grade()" (change)="changeGrade(g)" />
+          {{ g }}
+        </label>
+      </li>
+      }
+    </ul>
+    <div class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+      <span class="text-indigo-600">
+        @switch (grade()) {
+        @case ("A") { Exelent! }
+        @case ("B") { Good! }
+        @case ("C") { Enough }
+        @case ("D") { Insufficient }
+        @case ("E") { Reprobate }
+        @default { Select a valid option }
+        }
+      </span>
+    </div>
   </div>
 </section>
