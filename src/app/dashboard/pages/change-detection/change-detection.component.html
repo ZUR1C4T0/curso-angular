@@ -1,1 +1,18 @@
-<p>change-detection works!</p>,
+<app-title title="Change Detection" />
+
+<section class="grid grid-cols-1 gap-5 place-content-center md:grid-cols-2">
+  <div
+    class="block w-full max-w-sm p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      Signal
+    </h2>
+    <pre>{{ frameworkAsSignal() | json }}</pre>
+  </div>
+  <div
+    class="block w-full max-w-sm p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      Property
+    </h2>
+    <pre>{{ frameworkAsProperty | json }}</pre>
+  </div>
+</section>
