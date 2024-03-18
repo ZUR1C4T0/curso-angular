@@ -12,6 +12,7 @@ export class ControlFlowComponent {
 	public showContent = signal(false);
 	public readonly grades = ["A", "B", "C", "D", "E"] as const;
 	public grade = signal<(typeof this.grades)[number]>("E");
+	public frameworks = signal(["Angular", "React", "Vue", "Svelte", "Preact", "Solid"]);
 
 	public toggleContent() {
 		this.showContent.update((value) => !value);

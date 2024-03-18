@@ -85,4 +85,40 @@
       </span>
     </div>
   </div>
+
+  <!-- ngFor -->
+  <div
+    class="block w-full max-w-sm p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      ngFor
+    </h2>
+    <ul class="mt-3 text-sm text-gray-600 list-disc list-inside dark:text-gray-400">
+      <li *ngFor="let f of frameworks()">
+        {{ f }}
+      </li>
+      <li *ngIf="frameworks().length === 0">
+        No frameworks
+      </li>
+    </ul>
+  </div>
+
+  <!-- @for -->
+  <div
+    class="block w-full max-w-sm p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {{ "@" }}for
+    </h2>
+    <ul class="mt-3 text-sm text-gray-600 list-disc list-inside dark:text-gray-400">
+      @for (framework of frameworks(); track framework) {
+      <li>
+        {{ framework }}
+      </li>
+      }
+      @empty {
+      <li>
+        No frameworks
+      </li>
+      }
+    </ul>
+  </div>
 </section>
