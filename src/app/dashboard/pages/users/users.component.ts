@@ -1,11 +1,15 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { TitleComponent } from "~/app/shared/title/title.component";
+import { UsersService } from "~/services/users.service";
 
 @Component({
-	selector: "app-users",
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, TitleComponent, RouterModule],
 	templateUrl: "./users.component.html",
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersComponent {}
+export class UsersComponent {
+	public usersService = inject(UsersService);
+}
